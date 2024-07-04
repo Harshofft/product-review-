@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product-preview</title>
+</head>
+<style>
+    body{
+        background: whitesmoke;
+    }
+    .main-cointainer{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+   .main-img{
+        width: 350px;
+        height: 350px;
+        border: 1px solid black;
+        border-radius: 9px;
+        box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.7);
+        background-blend-mode: lighten;
+        transition: 0.5s ease-in-out;
+    }
+    .main-img:hover{
+        height: 365px;
+        width: 365px;
+    }
+    .img-con{
+        margin-top: 10px;
+    }
+    .small-img{
+        height: 70px;
+        margin: 2px;
+        box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
+    }
+    .small-img:hover{
+        box-shadow: 0px 2px 5px  rgb(0,183,235,0.7);
+    }
+    .small-img::after{
+        box-shadow: 0px 2px 5px  rgb(0,183,235,0.7);
+    }
+    info-about h2{
+        font-size: 16px;
+    }
+    .rating{
+        height: 70px;
+        margin-top: -30px;
+    }
+    .rate{
+        display: flex;
+        justify-content: center;
+    }
+    .rate p{
+        margin-top: -7px;  
+        margin-left: 7px;
+    
+    }
+    .info-about{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .price{
+        font-weight: 900;
+        font-size: 20px;
+    }
+    .btn-buy{
+        border: none;
+        border-radius:7px ;
+        background-color: lightblue;
+        width: 70px;
+        margin: 0px auto;
+        transition: 0.5s ease-in-out;
+    }
+    .btn-buy:hover{
+        background-color: navy;
+        color: aliceblue;
+    }
+</style>
+<body>
+    <div class="main-cointainer">
+        <img src="./1.jpg" alt="img" class="main-img" id="mainimg">
+        <div class="img-con">
+            <img src="./1.jpg" alt="png" class="small-img" onclick="imgchange('1.jpg')">
+            <img src="./2.jpg" alt="png" class="small-img" onclick="imgchange('2.jpg')">
+            <img src="./7.jpg" alt="png" class="small-img" onclick="imgchange('7.jpg')">
+            <img src="./4.jpg" alt="png" class="small-img" onclick="imgchange('4.jpg')">
+            <img src="./5.jpg" alt="png" class="small-img" onclick="imgchange('5.jpg')">
+            <img src="./6.jpg" alt="png" class="small-img" onclick="imgchange('6.jpg')">
+        </div>
+        <div class="info-about">
+            <h2>Apple iPhone 14 (128 GB) - Midnight</h2>
+            <div class="rate">
+            <img src="./rating.png" alt="rate" class="rating">
+            <p > Five star rated phone</p>
+            
+            </div>
+            <p class="price"> Price - 65000/-</p>
+            <button class="btn-buy">BUY NOW</button>
+        </div>
+    </div>
+    <script>
+        let mainImg = document.getElementById("mainimg")
+        function imgchange(action) {
+            mainImg.src=action;
+        }
+    </script>
+</body>
+</html>
