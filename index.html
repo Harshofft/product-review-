@@ -79,6 +79,20 @@
         background-color: navy;
         color: aliceblue;
     }
+    .incdec{
+        height: 35px;
+        margin: 10px;
+        position: relative;
+        top: 20px;
+    }
+    .inc-dec{
+         text-align: center;
+
+    }
+    .qua{
+        font-size: 20px;
+        font-weight: 700;
+    }
 </style>
 <body>
     <div class="main-cointainer">
@@ -100,6 +114,11 @@
             </div>
             <p class="price"> Price - 65000/-</p>
             <button class="btn-buy">BUY NOW</button>
+            <div class="inc-dec">
+                <img src="./plus.png" alt="" class="incdec" onclick="quant('plus')">
+                <span class="qua" id="quantity">1</span>
+                <img src="./minus.png" alt="" class="incdec" onclick="quant('minus')">
+            </div>
         </div>
     </div>
     <script>
@@ -107,6 +126,20 @@
         function imgchange(action) {
             mainImg.src=action;
         }
+        let quantityshow = document.getElementById("quantity")
+        let finquantity = parseInt(quantityshow.innerText)
+        function quant(act) {
+           if (finquantity ==5 && act == 'plus') {
+                alert("quantity should not be greater then 5")
+                return;
+           }
+          else if  (finquantity == 1 && act == 'minus') {
+                alert("quantity should not be less then zero")
+                return;
+           } 
+           quantityshow.innerText = act=='plus'? ++finquantity:--finquantity;
+           
+    }
     </script>
 </body>
 </html>
